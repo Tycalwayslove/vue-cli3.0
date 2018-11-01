@@ -1,7 +1,7 @@
 <!-- base组件 - navbar -->
 <template>
     <div class="footer">
-        <mt-tabbar :selected="selected">
+        <!-- <mt-tabbar :selected="selected">
             <mt-tab-item>
                <i slot="icon" class="iconfont icon-home_checked"></i>
                 外卖
@@ -18,7 +18,8 @@
                <i slot="icon" class="iconfont icon-home_checked"></i>
                 我的
             </mt-tab-item>
-        </mt-tabbar>
+        </mt-tabbar> -->
+        液位
     </div>
 </template>
 
