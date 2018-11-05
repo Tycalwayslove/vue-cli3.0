@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import {login } from "@/api/index";
 export default {
   components: {},
   props: {},
@@ -14,6 +15,10 @@ export default {
   },
 
   computed: {},
+  
+  created () {
+      this.loginBtn();
+  },
 
   watch: {},
 
@@ -21,7 +26,12 @@ export default {
   
   },
 
-  methods: {}
+  methods: {
+      async loginBtn(){
+          const {code,data,error } = await login({});
+          console.log(data);
+      }
+  }
 }
 
 </script>
