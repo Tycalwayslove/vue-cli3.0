@@ -15,17 +15,14 @@ body {
     min-height: 100%;
 }
 
-.header {
-    background-color: #c0eee0;
-    height: 60px;
-}
+.header {}
 
 .content {
-    background-color: red;
+    padding-top: 40px;
+    padding-bottom: 60px;
 }
 
 .footer {
-    background-color: yellow;
     height: 60px;
     margin-top: -60px;
 }

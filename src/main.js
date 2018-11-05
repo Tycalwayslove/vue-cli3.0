@@ -1,16 +1,14 @@
 import Vue from "vue";
-import { Button, Cell, Tabbar, TabItem } from "mint-ui";
+// import { Button, Cell, Tabbar, TabItem, TabContainer } from "mint-ui";
+// 为何我按需引入文件还更大一点？？？？
+import MintUI from "mint-ui";
+import "mint-ui/lib/style.css";
+import "@common/css/index.scss";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import "@common/css/index.scss";
-
-Vue.component(Button.name, Button);
-Vue.component(Cell.name, Cell);
-Vue.component(Tabbar.name, Tabbar);
-Vue.component(TabItem.name, TabItem);
+Vue.use(MintUI);
 import "normalize.css";
-
 Vue.config.productionTip = false;
 import FastClick from "fastclick";
 FastClick.attach(document.body);

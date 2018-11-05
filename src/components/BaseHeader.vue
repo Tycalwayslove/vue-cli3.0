@@ -1,8 +1,10 @@
 <!-- 基础组件- header -->
 <template>
-<div class="header">
-<p>我是页头</p>
-</div>
+<mt-header fixed title="我是页头">
+    <router-link to="/" slot="left">
+         <mt-button icon="back" @click="back"></mt-button>
+    </router-link>
+</mt-header>
 </template>
 
 <script>
@@ -23,7 +25,11 @@ export default {
   
   },
 
-  methods: {}
+  methods: {
+      back(){
+          console.log('back');
+      }
+  }
 }
 
 </script>
