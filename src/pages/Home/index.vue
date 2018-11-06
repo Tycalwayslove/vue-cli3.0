@@ -1,39 +1,34 @@
 <!-- index頁面 -->
 <template>
-<div>hello world</div>
+    <div>hello world</div>
 </template>
 
 <script>
-import {login } from "@/api/index";
+import { getAppConfigs } from "@/api/index";
 export default {
   components: {},
   props: {},
-  data () {
-    return {
-     
-    };
+  data() {
+    return {};
   },
 
   computed: {},
-  
-  created () {
-      this.loginBtn();
+
+  created() {
+    this.loginBtn();
   },
 
   watch: {},
 
-  mounted(){
-  
-  },
+  mounted() {},
 
   methods: {
-      async loginBtn(){
-          const {code,data,error } = await login({});
-          console.log(data);
-      }
+    async loginBtn() {
+      const { code, data, error } = await getAppConfigs({});
+      console.log(data);
+    }
   }
-}
-
+};
 </script>
 <style lang='scss' scoped>
 </style>

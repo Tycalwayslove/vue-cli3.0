@@ -6,7 +6,7 @@ function resolve(dir) {
 module.exports = {
   devServer: {
     port: 9187,
-    host: "192.168.1.21",
+    host: "localhost",
     open: true,
     proxy: null
   },

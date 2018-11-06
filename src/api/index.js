@@ -1,7 +1,7 @@
 import fetch from "./fetch";
-export const login = data =>
+export const getAppConfigs = data =>
   fetch({
-    url: "/login",
+    url: "getAppConfigs",
     method: "POST",
     data
   });
