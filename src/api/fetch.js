@@ -2,12 +2,19 @@ import axios from "axios";
 import qs from "qs";
 import router from "@/router";
 import store from "@/store";
-import { DEV_HOST } from "./config";
-import { getUrlVars, browser, isPlatform, encrSort } from "@common/js/common";
+import {
+  DEV_HOST
+} from "./config";
+import {
+  getUrlVars,
+  browser,
+  isPlatform,
+  encrSort
+} from "@common/js/common";
 
 const instance = axios.create({
   //默认地址
-    baseURL: DEV_HOST,
+  baseURL: DEV_HOST,
   //设置请求超时设置
   timeout: 5000,
   header: {
@@ -33,9 +40,17 @@ instance.interceptors.request.use(
 );
 
 instance.interceptors.response.use(res => {
-  console.log(res);
-  return res;
-});
+    let data = res.data;
+    if (data.code === 1001 || data.code === 1002) {
+      console.log('请登录');
+    }
+
+    return res;
+  },
+  err => {
+
+  }
+);
 
 export default options => {
   return new Promise((resolve, reject) => {
