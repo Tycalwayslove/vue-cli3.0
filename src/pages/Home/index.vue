@@ -1,34 +1,40 @@
-<!-- index頁面 -->
+/*
+ * @Author: tangyouchao 
+ * @Date: 2018-11-08 10:11:59 
+ * @Last Modified by: tangyouchao
+ * @Last Modified time: 2018-11-08 10:34:37
+ */
+<!-- 入口页面 -->
 <template>
-    <div>hello world</div>
+    <div class="home-page">
+        <div class="account-box">
+            <router-link to="/login">
+                <mt-button type="primary">登陆</mt-button>
+            </router-link>
+            <router-link to="/register">
+                <mt-button type="default">注册</mt-button>
+            </router-link>
+        </div>
+    </div>
 </template>
 
 <script>
-import { getAppConfigs } from "@/api/index";
 export default {
   components: {},
-  props: {},
+
   data() {
     return {};
   },
 
-  computed: {},
-
-  created() {
-    this.loginBtn();
-  },
-
-  watch: {},
-
-  mounted() {},
-
-  methods: {
-    async loginBtn() {
-      const { code, data, error } = await getAppConfigs({});
-      console.log(data);
-    }
-  }
+  methods: {}
 };
 </script>
-<style lang='scss' scoped>
+
+<style lang="scss" scoped>
+.account-box {
+  margin-top: 20px;
+  & button {
+    margin-right: 20px;
+  }
+}
 </style>
