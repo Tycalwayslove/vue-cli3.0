@@ -7,4 +7,4 @@
  * @Last Modified time: 2018-11-08 21:42:24
  */
 //设置用户信息和登录
-export const SET_USER_INFO = "set_user_info";
+export const SET_USER_INFO = "SET_USER_INFO";
