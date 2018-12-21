@@ -1,7 +1,7 @@
 import fetch from "./fetch";
-export const getAppConfigs = data =>
+export const test = data =>
   fetch({
-    url: "getAppConfigs",
-    method: "POST",
+    url: "/test",
+    method: "post",
     data
   });

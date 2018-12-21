@@ -9,10 +9,10 @@
     <div class="home-page">
         <div class="account-box">
             <router-link to="/login">
-                <mt-button type="primary">登陆</mt-button>
+                <button type="primary">登陆</button>
             </router-link>
             <router-link to="/register">
-                <mt-button type="default">注册</mt-button>
+                <button type="default">注册</button>
             </router-link>
         </div>
     </div>

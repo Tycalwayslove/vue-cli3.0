@@ -5,33 +5,16 @@ import store from "@/store";
 import {
   DEV_HOST
 } from "./config";
-import {
-  getUrlVars,
-  browser,
-  isPlatform,
-  encrSort
-} from "@common/js/common";
 
 const instance = axios.create({
-  //默认地址
-  baseURL: DEV_HOST,
-  //设置请求超时设置
-  timeout: 5000,
   header: {
-    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
   },
-  data: {}
+  data:{}
 });
 //POST 传参序列化
 instance.interceptors.request.use(
   config => {
-    // 添加时间戳等基础参数
-    encrSort(config);
-    //data对象序列化
-    if (config.method === "post") {
-      config.data = qs.stringify(config.data);
-    }
-    console.log(config);
     return config;
   },
   error => {
@@ -41,9 +24,6 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(res => {
     let data = res.data;
-    if (data.code === 1001 || data.code === 1002) {
-      console.log('请登录');
-    }
 
     return res;
   },
@@ -53,18 +33,22 @@ instance.interceptors.response.use(res => {
 );
 
 export default options => {
+    console.log(options);
   return new Promise((resolve, reject) => {
     instance(options)
       .then(
         response => {
-          resolve(response.data);
+          resolve(response);
+          console.log(response);
         },
         err => {
           reject(err);
+          console.log(err);
         }
       )
       .catch(error => {
-        reject(error);
+          reject(error);
+          console.log(error);
       });
   });
 };

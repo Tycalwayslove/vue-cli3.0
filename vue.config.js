@@ -14,6 +14,7 @@ module.exports = {
     config.resolve.alias
       .set("@common", resolve("src/common"))
       .set("@store", resolve("src/store"))
+      .set("@api", resolve("src/api"))
       .set("@components", resolve("src/components"))
       .set("@pages", resolve("src/pages"));
   }

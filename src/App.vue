@@ -1,24 +1,30 @@
 <template>
     <div id="app">
-        <div class="main">
-            <base-header></base-header>
-            <div class="content">
-                <router-view />
-            </div>
-        </div>
-        <base-nav-bar></base-nav-bar>
+        <p>hello world</p>
     </div>
 </template>
 
 <script>
-import BaseHeader from "@/components/BaseHeader";
-import BaseNavBar from "@/components/BaseNavBar";
-
+import {test} from '@api';
 export default {
   components: {
-    BaseHeader,
-    BaseNavBar
-  }
+  },
+  data() {
+      return {
+          
+      }
+  },
+  mounted () {
+    this.getData();
+  },
+  methods: {
+      async getData(){
+          this.$http.get('http://rap2api.taobao.org/app/mock/122101/user',{}).then(res=>{
+              console.log(res);
+          })
+         
+      }
+  },
 };
 </script>
 
